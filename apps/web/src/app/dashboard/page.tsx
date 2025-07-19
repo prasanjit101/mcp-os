@@ -1,15 +1,12 @@
 'use client';
-import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import ApiKeyManager from '@/components/api-key-manager';
 import { authClient } from '@/lib/auth-client';
-import { trpc } from '@/utils/trpc';
 
 export default function Dashboard() {
 	const router = useRouter();
 	const { data: session, isPending } = authClient.useSession();
-
-	const privateData = useQuery(trpc.privateData.queryOptions());
 
 	useEffect(() => {
 		if (!session && !isPending) {
@@ -25,7 +22,7 @@ export default function Dashboard() {
 		<div>
 			<h1>Dashboard</h1>
 			<p>Welcome {session?.user.name}</p>
-			<p>privateData: {privateData.data?.message}</p>
+			<ApiKeyManager />
 		</div>
 	);
 }

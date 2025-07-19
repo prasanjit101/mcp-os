@@ -1,3 +1,4 @@
+import { sql } from 'drizzle-orm';
 import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
 export const user = sqliteTable('user', {
@@ -54,8 +55,7 @@ export const verification = sqliteTable('verification', {
 	updatedAt: integer('updated_at', { mode: 'timestamp' }),
 });
 
-
-export const apiKey = sqliteTable('api_key', {
+export const apikey = sqliteTable('apikey', {
 	id: text('id').primaryKey().notNull(),
 	name: text('name'),
 	start: text('start'),
@@ -77,8 +77,12 @@ export const apiKey = sqliteTable('api_key', {
 	remaining: integer('remaining'),
 	lastRequest: integer('last_request', { mode: 'timestamp' }),
 	expiresAt: integer('expires_at', { mode: 'timestamp' }),
-	createdAt: integer('created_at', { mode: 'timestamp' }).notNull(),
-	updatedAt: integer('updated_at', { mode: 'timestamp' }).notNull(),
-	permissions: text('permissions'),
-	metadata: text('metadata'),
+	createdAt: integer('created_at', { mode: 'timestamp' }).default(
+		sql`CURRENT_TIMESTAMP`,
+	),
+	updatedAt: integer('updated_at', { mode: 'timestamp' }).default(
+		sql`CURRENT_TIMESTAMP`,
+	),
+	permissions: text('permissions', { mode: 'json' }),
+	metadata: text('metadata', { mode: 'json' }),
 });
