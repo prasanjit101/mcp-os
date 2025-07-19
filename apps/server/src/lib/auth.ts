@@ -1,6 +1,6 @@
 import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
-import { multiSession } from 'better-auth/plugins';
+import { apiKey, multiSession } from 'better-auth/plugins';
 import { db } from '../db';
 import * as schema from '../db/schema/auth';
 import { env } from '../env';
@@ -22,6 +22,7 @@ export const auth = betterAuth({
 		},
 	},
 	plugins: [
+		apiKey(),
 		multiSession({
 			maximumSessions: 2,
 		}),
