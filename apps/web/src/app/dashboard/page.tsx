@@ -1,7 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
-import ApiKeyManager from '@/components/api-key-manager';
 import { authClient } from '@/lib/auth-client';
 
 export default function Dashboard() {
@@ -20,7 +19,8 @@ export default function Dashboard() {
 
 	return (
 		<div className="container mx-auto">
-			<ApiKeyManager />
+			<h1 className="text-2xl font-bold">Connections</h1>
+			<p>Connections will be listed here</p>
 		</div>
 	);
 }
