@@ -21,11 +21,12 @@ use the following MCPs on the basis of following rules:
 </mcp_tools_to_use>
 
 
-# About project
+# About the project
 
 MCP OS is an open source platform that provides hosted MCP servers. These allows other developers to integrate MCP servers as integrations quickly into their application.  
 
-Users will authorise their external apps, get an mcp server url and use it anywhere.
+- Users will authorise their external apps, get an mcp server url and use it anywhere.
+- Follow a plug and use kind of directory structure to organize the different mcp servers.
 
 ## Features
 
