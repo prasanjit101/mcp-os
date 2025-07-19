@@ -1,6 +1,7 @@
 # mcp-os
 
-This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines Next.js, Hono, TRPC, and more.
+A platform that provides hosted MCP servers for the world. Built with the vision to centralise the scattered world of MCP.
+
 
 ## Features
 
@@ -16,6 +17,7 @@ This project was created with [Better-T-Stack](https://github.com/AmanVarshney01
 - **Authentication** - Email & password authentication with Better Auth
 - **Turborepo** - Optimized monorepo build system
 - **Biome** - Linting and formatting
+- **pnpm** - Package manager
 
 ## Getting Started
 
